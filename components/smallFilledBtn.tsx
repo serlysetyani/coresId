@@ -4,7 +4,7 @@ import { StyleSheet, TouchableOpacity, Text } from 'react-native';
 import Colors from '../constant/Colors';
 import Fonts from '../constant/Typography';
 
-const defaultFilledBtn = (props) => {
+const smallFilledBtn = (props) => {
     return (
         <TouchableOpacity style={styles.btnContainer} onPress={props.onPress}>
             <Text style={styles.btnText}>
@@ -17,17 +17,17 @@ const defaultFilledBtn = (props) => {
 const styles = StyleSheet.create({
     btnContainer: {
         backgroundColor: Colors.redBrick,
-        width: '100%',
-        height: 48,
+        width: '50%',
+        height: 40,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 30
     },
     btnText: {
         color: Colors.white,
-        fontSize: 17,
+        fontSize: 13,
         fontWeight: '600'
     }
 });
 
-export default defaultFilledBtn;
+export default smallFilledBtn;

@@ -3,6 +3,8 @@ import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
 
 import DefaultFilledBtn from '../components/defaultFilledBtn';
 import DefaultOutlineBtn from '../components/defaultOutlineBtn';
+import SmallFilledBtn from '../components/smallFilledBtn';
+import SmallOutlineBtn from '../components/smallOutlineBtn';
 
 export default class Login extends React.Component {
     render() {
@@ -21,6 +23,12 @@ export default class Login extends React.Component {
                     <DefaultOutlineBtn style={styles.btnHola}>
                         Hola
                     </DefaultOutlineBtn>
+                    <SmallFilledBtn>
+                        Small Button
+                    </SmallFilledBtn>
+                    <SmallOutlineBtn>
+                        Small
+                    </SmallOutlineBtn>
                 </View>
             </SafeAreaView>
         );
