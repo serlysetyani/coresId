@@ -5,6 +5,7 @@ import DefaultFilledBtn from '../components/defaultFilledBtn';
 import DefaultOutlineBtn from '../components/defaultOutlineBtn';
 import SmallFilledBtn from '../components/smallFilledBtn';
 import SmallOutlineBtn from '../components/smallOutlineBtn';
+import DefaultDisabledBtn from '../components/defaultDisabledBtn';
 
 export default class Login extends React.Component {
     render() {
@@ -29,6 +30,7 @@ export default class Login extends React.Component {
                     <SmallOutlineBtn>
                         Small
                     </SmallOutlineBtn>
+                    <DefaultDisabledBtn>Disabled</DefaultDisabledBtn>
                 </View>
             </SafeAreaView>
         );
