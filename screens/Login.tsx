@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
 
-import Button from '../components/button';
+import DefaultFilledBtn from '../components/defaultFilledBtn';
+import DefaultOutlineBtn from '../components/defaultOutlineBtn';
 
 export default class Login extends React.Component {
     render() {
@@ -12,10 +13,14 @@ export default class Login extends React.Component {
                         <Text style={{ fontSize: 28, fontWeight: '500' }}>Sign up</Text>
                     </View>
                     <View>
-                        <Button>
+                        <DefaultFilledBtn>
                             LOGIN
-                        </Button>
+                        </DefaultFilledBtn>
+
                     </View>
+                    <DefaultOutlineBtn style={styles.btnHola}>
+                        Hola
+                    </DefaultOutlineBtn>
                 </View>
             </SafeAreaView>
         );
@@ -26,5 +31,8 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 16,
         paddingTop: 60
+    },
+    btnHola: {
+        marginTop: 100
     }
 })
