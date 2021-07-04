@@ -1,48 +1,45 @@
 import * as React from 'react';
 import { View, StyleSheet, SafeAreaView, Text } from 'react-native';
 
-import DefaultFilledBtn from '../components/defaultFilledBtn';
-import DefaultOutlineBtn from '../components/defaultOutlineBtn';
-import SmallFilledBtn from '../components/smallFilledBtn';
-import SmallOutlineBtn from '../components/smallOutlineBtn';
-import DefaultDisabledBtn from '../components/defaultDisabledBtn';
+import Colors from '../constant/Colors';
+import Typography from '../constant/Typography';
 
-export default class Login extends React.Component {
-    render() {
-        return (
-            <SafeAreaView>
-                <View style={styles.container}>
-                    <View>
-                        <Text style={{ fontSize: 28, fontWeight: '500' }}>Sign up</Text>
-                    </View>
-                    <View>
-                        <DefaultFilledBtn>
-                            LOGIN
-                        </DefaultFilledBtn>
+import DefaultInputForm from '../components/defaultInputForm';
 
-                    </View>
-                    <DefaultOutlineBtn style={styles.btnHola}>
-                        Hola
-                    </DefaultOutlineBtn>
-                    <SmallFilledBtn>
-                        Small Button
-                    </SmallFilledBtn>
-                    <SmallOutlineBtn>
-                        Small
-                    </SmallOutlineBtn>
-                    <DefaultDisabledBtn>Disabled</DefaultDisabledBtn>
-                </View>
-            </SafeAreaView>
-        );
-    }
+const Login = () => {
+    const [value, onchangeText] = React.useState();
+    return (
+        <SafeAreaView style={styles.screenBackground}>
+            <View style={styles.container}>
+                <Text style={Typography.title1}>Sign up</Text>
+                <DefaultInputForm
+                    label="username"
+                    onchangeText={(text) => onchangeText}
+                    value={value}
+                    icon={<Text>Test</Text>}
+                    iconPosition="right"
+                />
+                <DefaultInputForm
+                    label="Password"
+                    onchangeText={(text) => onchangeText}
+                    value={value}
+                    icon={<Text>Test</Text>}
+                    iconPosition="left"
+                />
+            </View>
+        </SafeAreaView >
+    );
 }
 
 const styles = StyleSheet.create({
+    screenBackground: {
+        backgroundColor: Colors.appBackground,
+        flex: 1
+    },
     container: {
         paddingHorizontal: 16,
         paddingTop: 60
-    },
-    btnHola: {
-        marginTop: 100
     }
 })
+
+export default Login;

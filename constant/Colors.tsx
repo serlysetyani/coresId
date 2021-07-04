@@ -32,4 +32,6 @@ export default {
     grey: '#EAEAEA',
     lightGrey: '#F3F3F3',
     white: '#FFFFFF',
+
+    appBackground: '#F9F9F9'
 }
