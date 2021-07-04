@@ -45,7 +45,7 @@ const Login = () => {
                                 </TouchableOpacity>
                             </Text>
                             <View style={{ paddingTop: 40 }}>
-                                <Text>Atau daftar dengan</Text>
+                                <Text>Atau masuk dengan</Text>
                                 <View style={styles.socialLoginContainer}>
                                     <TouchableOpacity>
                                         <Image source={require('../assets/images/google.png')} style={styles.socialLogin} />
