@@ -7,7 +7,7 @@ import Typography from '../constant/Typography';
 import DefaultInputForm from '../components/defaultInputForm';
 import DefaultFilledBtn from '../components/defaultFilledBtn';
 
-const Login = () => {
+const Login = ({ navigation }) => {
     const [value, onchangeText] = React.useState();
     return (
         <SafeAreaView style={styles.screenBackground}>
@@ -25,20 +25,22 @@ const Login = () => {
                     <DefaultInputForm
                         label="Password"
                         placeholder="Password"
-                        onchangeText={(text) => onchangeText}
                         value={value}
-                        icon={<Text></Text>}
+                        icon={<Text>Show</Text>}
+                        onchangeText={(text) => onchangeText}
                         iconPosition="right"
                     />
-                    <Text style={[Typography.smallText, { color: Colors.redBrick, alignSelf: 'flex-end' }]}>Lupa password?</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
+                        <Text style={[Typography.smallText, { color: Colors.redBrick, alignSelf: 'flex-end' }]}>Lupa password?</Text>
+                    </TouchableOpacity>
                     <View style={styles.botContainer}>
                         <DefaultFilledBtn style={styles.signupBtn}>
                             LOGIN
                         </DefaultFilledBtn>
-                        <View style={{ alignItems: 'center', paddingTop: 36 }}>
-                            <Text>
+                        <View style={{ alignItems: 'center', paddingTop: 36, justifyContent: 'center' }}>
+                            <Text style={{ alignSelf: 'center' }}>
                                 Belum punya akun?
-                                <TouchableOpacity>
+                                <TouchableOpacity onPress={() => navigation.navigate('SignupScreen')}>
                                     <Text style={styles.linkLogin} >
                                         Daftar sekarang!
                                     </Text>
