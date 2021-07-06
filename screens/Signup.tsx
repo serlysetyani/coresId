@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet, SafeAreaView, Text, TouchableOpacity, Image } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../constant/Colors';
 import Typography from '../constant/Typography';
@@ -9,6 +10,8 @@ import DefaultFilledBtn from '../components/defaultFilledBtn';
 
 const Signup = () => {
     const [value, onchangeText] = React.useState();
+    const [isSecureEntry, setIsSecureEntry] = React.useState(true);
+
     return (
         <SafeAreaView style={styles.screenBackground}>
             <View style={styles.container}>
@@ -17,34 +20,46 @@ const Signup = () => {
                     <DefaultInputForm
                         label="Username"
                         placeholder="Username"
-                        onchangeText={(text) => onchangeText}
+                        onchangeText={() => onchangeText}
                         value={value}
                         icon={<Text></Text>}
                         iconPosition="right"
+                        secureTextEntry={false}
                     />
                     <DefaultInputForm
                         label="Email"
                         placeholder="Email"
-                        onchangeText={(text) => onchangeText}
+                        onchangeText={() => onchangeText}
                         value={value}
                         icon={<Text></Text>}
                         iconPosition="right"
+                        secureTextEntry={false}
                     />
                     <DefaultInputForm
                         label="Password"
                         placeholder="Password"
-                        onchangeText={(text) => onchangeText}
                         value={value}
-                        icon={<Text></Text>}
+                        icon={
+                            <TouchableOpacity onPress={() => setIsSecureEntry((prev) => !prev)}>
+                                <Ionicons name="eye" size={24} color={Colors.grey} />
+                            </TouchableOpacity>
+                        }
+                        onchangeText={() => onchangeText}
                         iconPosition="right"
+                        secureTextEntry={isSecureEntry}
                     />
                     <DefaultInputForm
                         label="Confirm Password"
                         placeholder="Confirm Password"
-                        onchangeText={(text) => onchangeText}
+                        onchangeText={() => onchangeText}
                         value={value}
-                        icon={<Text></Text>}
+                        icon={
+                            <TouchableOpacity onPress={() => setIsSecureEntry((prev) => !prev)}>
+                                <Ionicons name="eye" size={24} color={Colors.grey} />
+                            </TouchableOpacity>
+                        }
                         iconPosition="right"
+                        secureTextEntry={isSecureEntry}
                     />
                     <View style={styles.botContainer}>
                         <DefaultFilledBtn style={styles.signupBtn}>

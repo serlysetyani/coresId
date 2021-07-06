@@ -19,10 +19,11 @@ const ForgotPassword = () => {
                 <DefaultInputForm
                     label="Email"
                     placeholder="Email"
-                    onchangeText={(text) => onchangeText}
+                    onchangeText={() => onchangeText}
                     value={value}
                     icon={<Text></Text>}
                     iconPosition="right"
+                    secureTextEntry={false}
 
                 />
                 <View style={{ paddingTop: 40 }}>

@@ -19,7 +19,7 @@ const Login = ({ navigation }) => {
                     <DefaultInputForm
                         label="Email"
                         placeholder="Email"
-                        onchangeText={(text) => onchangeText}
+                        onchangeText={() => onchangeText}
                         value={value}
                         icon={<Text></Text>}
                         iconPosition="right"
@@ -34,7 +34,7 @@ const Login = ({ navigation }) => {
                                 <Ionicons name="eye" size={24} color={Colors.grey} />
                             </TouchableOpacity>
                         }
-                        onchangeText={(text) => onchangeText}
+                        onchangeText={() => onchangeText}
                         iconPosition="right"
                         secureTextEntry={isSecureEntry}
                     />
