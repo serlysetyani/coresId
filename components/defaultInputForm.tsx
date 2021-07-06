@@ -3,7 +3,7 @@ import { StyleSheet, TextInput, View, Text } from 'react-native';
 
 import Colors from '../constant/Colors';
 
-const defaultInputForm = ({ onchangeText, value, label, icon, iconPosition, placeholder }) => {
+const defaultInputForm = ({ onchangeText, value, label, icon, iconPosition, placeholder, secureTextEntry }) => {
 
     const getFlexDirection = () => {
         if (icon && iconPosition) {
@@ -36,7 +36,8 @@ const defaultInputForm = ({ onchangeText, value, label, icon, iconPosition, plac
                     value={value}
                     placeholder={placeholder}
                     onFocus={() => { setFocused(true) }}
-                    onBlur={() => { setFocused(false) }} />
+                    onBlur={() => { setFocused(false) }}
+                    secureTextEntry={secureTextEntry} />
             </View>
 
         </View>

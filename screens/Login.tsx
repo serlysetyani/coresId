@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet, SafeAreaView, Text, TouchableOpacity, Image } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 import Colors from '../constant/Colors';
 import Typography from '../constant/Typography';
@@ -9,6 +10,7 @@ import DefaultFilledBtn from '../components/defaultFilledBtn';
 
 const Login = ({ navigation }) => {
     const [value, onchangeText] = React.useState();
+    const [isSecureEntry, setIsSecureEntry] = React.useState(true);
     return (
         <SafeAreaView style={styles.screenBackground}>
             <View style={styles.container}>
@@ -21,14 +23,20 @@ const Login = ({ navigation }) => {
                         value={value}
                         icon={<Text></Text>}
                         iconPosition="right"
+                        secureTextEntry={false}
                     />
                     <DefaultInputForm
                         label="Password"
                         placeholder="Password"
                         value={value}
-                        icon={<Text>Show</Text>}
+                        icon={
+                            <TouchableOpacity onPress={() => setIsSecureEntry((prev) => !prev)}>
+                                <Ionicons name="eye" size={24} color={Colors.grey} />
+                            </TouchableOpacity>
+                        }
                         onchangeText={(text) => onchangeText}
                         iconPosition="right"
+                        secureTextEntry={isSecureEntry}
                     />
                     <TouchableOpacity onPress={() => navigation.navigate('ForgotPasswordScreen')}>
                         <Text style={[Typography.smallText, { color: Colors.redBrick, alignSelf: 'flex-end' }]}>Lupa password?</Text>
